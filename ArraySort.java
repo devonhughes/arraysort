@@ -6,7 +6,7 @@
     Running each of the sorting algorithms creates a randomly generated integer
     array which is then stored in a text file. The stored array is then sorted
     using the specified algorithm, during which the time is recorded in seconds.
-    Thesorted array and these results are then output into text files for analysis. 
+    The sorted array and these results are then output into text files for analysis. 
  */
 package arraysort;
 
@@ -133,38 +133,7 @@ public class ArraySort {
                     mOutput.println(mIterativePath + " : " + secondsSorted);
                 } 
             } mOutput.close();
-        }
-        public static void runQuickSorts() throws IOException{
-            Sort sorty = new Sort();
-            File qFile = new File("qResults.txt");
-            PrintWriter qOutput = new PrintWriter(qFile);
-            int[] qSizes = {5,2};
-            String [] qPaths = {"q5test.txt", "q10test.txt"};
-            
-            int i = 0;
-            int j = 0;
-                        
-            for(i = 0; i < qSizes.length; i++){
-                for(j = 0; j < 1; j++){
-                    String qIterativePath = qPaths[i+j];
-                    RandomArray qRandom = new RandomArray(qIterativePath, qSizes[i]);      
-                    ConvertFormat cf = new ConvertFormat();
-                    int[] quick = qRandom.getTheArray();
-                    cf.arrayToFile(quick, qIterativePath);
-                    
-                    // Code to perform a bubble sort 
-                    long startTime = System.nanoTime();
-                    sorty.QuickSort(qIterativePath);
-                    long totalNanoSeconds = System.nanoTime() - startTime;
-                    printSortResult(qIterativePath, totalNanoSeconds, qOutput);
-//                    double secondsSorted = (double)elapsedTime / 1000000000.0;
-//                    System.out.println(qIterativePath + " time: " + secondsSorted);
-//                    System.out.println("---------------------------------");
-//                    qOutput.println(qIterativePath + " : " + secondsSorted);
-                } 
-            } qOutput.close();
-        }
-        
+        }     
         
         public static void runAllSorts() throws FileNotFoundException, IOException{
             

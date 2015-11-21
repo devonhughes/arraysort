@@ -137,12 +137,5 @@ public class Sort {
                 System.arraycopy( leftarray , leftCount ,sortedarray ,arrayCount , (leftarray.length - leftCount));
             } 
             return sortedarray; //returns back to mergeSort method
-       }
-      
-    
-    //  QuickSort: BONUS CREDIT
-    
-
-
-    
+       }    
 }
